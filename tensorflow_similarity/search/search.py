@@ -112,3 +112,8 @@ class Search(ABC):
         Args:
             path: where to store the data
         """
+
+    @abstractmethod
+    def _build(self, verbose=0):
+        """Build the index this is need to take into account the new points
+        """
