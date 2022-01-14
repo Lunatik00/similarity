@@ -747,6 +747,14 @@ class Indexer():
         "Return the index size"
         return self.kv_store.size()
 
+    def rebuild(self,verbose:int=1) -> None:
+        """Rebuild the search, needed to add new points
+
+        Args:
+            verbose: Be verbose. Defaults to 1.
+        """
+        self.search._build(verbose=verbose)
+
     def stats(self):
         """return index statistics"""
         stats = self._stats
