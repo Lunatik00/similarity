@@ -1108,6 +1108,14 @@ class ContrastiveModel(tf.keras.Model):
         "Reinitialize the index"
         self._index.reset()
 
+    def rebuild_index(self,verbose:int=1):
+        """Rebuild the index
+
+        Args:
+            verbose: Be verbose. Defaults to 1.
+        """
+        self._index.rebuild(verbose=verbose)
+
     def index_size(self) -> int:
         "Return the index size"
         return self._index.size()
